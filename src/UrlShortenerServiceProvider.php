@@ -87,7 +87,7 @@ class UrlShortenerServiceProvider extends ServiceProvider
     private function facadeBindings()
     {
         // Register 'vinelab.shorten' instance container
-        $this->app['vinelab.shorten'] = $this->app->share(function ($app) {
+        $this->app['vinelab.shorten'] = $this->app->singleton(function ($app) {
             return $app->make('Vinelab\UrlShortener\Shorten');
         });
 
